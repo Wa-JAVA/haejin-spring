@@ -1,0 +1,52 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.4'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+ext['hidernate.version'] = '5.2.11.Final'
+//추가한거 SpringDataJpa가 사용하는 Hibernate의 버전만 5.2.11로 변경해 사용하겠단 의미
+
+dependencies {
+	/*implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.5.3'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator:2.5.3'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.5.3'
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.5.3'
+    implementation 'junit:junit:4.13.2'
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+	implementation 'pl.allegro.tech.boot:handlebars-spring-boot-starter:0.3.2'
+	runtimeOnly 'com.h2database:h2:1.4.200'
+	annotationProcessor 'org.projectlombok:lombok:1.18.20'
+	implementation 'org.springframework:spring-test:5.3.9'
+	implementation 'org.springframework.boot:spring-boot-starter-test:2.5.3'*/
+
+	implementation 'org.springframework.boot:spring-boot-starter-actuator:2.5.3'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.5.3'
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.5.3'
+	implementation 'pl.allegro.tech.boot:handlebars-spring-boot-starter:0.2.15'
+	implementation 'junit:junit:4.13.2'
+	compileOnly 'org.projectlombok:lombok:1.18.20'
+	runtimeOnly 'com.h2database:h2:1.4.200'
+	annotationProcessor 'org.projectlombok:lombok:1.18.20'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.3'
+
+}
+
+test {
+	useJUnitPlatform()
+}
+
